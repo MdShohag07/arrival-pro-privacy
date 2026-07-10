@@ -11,64 +11,80 @@
   h1{font-size:30px;margin:0 0 6px}
   h2{font-size:20px;margin:34px 0 10px;color:#5b21b6}
   .updated{color:#6b6f80;font-size:14px;margin-bottom:28px}
-  ul{padding-left:22px}
-  li{margin:8px 0}
+  ul{padding-left:22px} li{margin:8px 0}
   .foot{margin-top:44px;padding-top:18px;border-top:1px solid #e6e4ee;color:#6b6f80;font-size:14px}
   a{color:#6d28d9}
+  code{background:#f4f2fa;padding:1px 5px;border-radius:5px;font-size:14px}
 </style>
 </head>
 <body>
 <div class="wrap">
 
 <h1>Privacy Policy — Arrival Pro</h1>
-<div class="updated">Chrome extension "Arrival Pro". Last updated: 10 July 2026.</div>
+<div class="updated">Chrome extension "Arrival Pro". Last updated: 13 July 2026.</div>
 
-<p>Arrival Pro ("the extension") is a workflow tool that helps authorised users process
-product arrivals on Miinto's partner portal (proxy-arrival.miinto.net). This policy explains
-exactly what data the extension handles and why.</p>
+<p>Arrival Pro ("the extension") is a workplace productivity tool that helps authorised
+users process product arrivals on Miinto's partner portal (proxy-arrival.miinto.net).
+It is distributed by the developer to a specific team and is not intended for the general
+public. This policy explains what data the extension handles and why.</p>
 
 <h2>Data we handle</h2>
 <ul>
-  <li><strong>Google account email address.</strong> Read once through Chrome's
-      <code>identity.email</code> API for a single purpose: to check whether the signed-in user
-      is on the approved-users list (access control). If the optional one-device lock is enabled
-      by the account owner, the email is sent only to a private server the account owner deploys
-      and controls. The email is never sold, shared with third parties, or used for advertising.</li>
-  <li><strong>Page content on proxy-arrival.miinto.net.</strong> Style IDs, sizes, brand,
-      and category are read from the page solely to perform the automation (filling sizes,
-      collecting Style IDs). This data is stored locally in the browser using
-      <code>chrome.storage.local</code>.</li>
-  <li><strong>Local usage counts.</strong> The number of products submitted or rejected, and the
-      Style IDs of submitted products, are stored locally to power the extension's own dashboard.</li>
+  <li><strong>Google account email address.</strong> Read through Chrome's
+      <code>identity.email</code> API to check whether the signed-in user is on the
+      approved-users list (access control) and to identify who performed each action for
+      work reporting. It is never sold or used for advertising.</li>
+  <li><strong>Work activity records.</strong> When an authorised user submits or rejects a
+      product, the extension records the event: the user's email, a randomly generated
+      device identifier, the extension version, the action type (create, merge, submit or
+      reject), the product Style ID and link, and the date, hour and timestamp.</li>
+  <li><strong>Page content on proxy-arrival.miinto.net.</strong> Style IDs, sizes, brand and
+      category are read from the page solely to perform the automation (filling sizes,
+      collecting Style IDs).</li>
 </ul>
 
-<h2>What we do not do</h2>
+<h2>Where data is stored and who can see it</h2>
 <ul>
-  <li>We do not collect, transmit, or store personal data on our own servers.</li>
-  <li>We do not use analytics, tracking, or advertising of any kind.</li>
-  <li>We do not sell or transfer user data to third parties.</li>
-  <li>We do not use or transfer user data for purposes unrelated to the extension's single purpose.</li>
-  <li>We do not use or transfer user data to determine creditworthiness or for lending purposes.</li>
+  <li>Settings, collected Style IDs and daily counts are stored <strong>locally</strong> in the
+      user's browser (<code>chrome.storage.local</code>).</li>
+  <li>The <strong>work activity records</strong> described above are sent to a private Google
+      Sheet owned and controlled by the developer (the team administrator), and to a private
+      Google Apps Script the developer deploys, for the sole purpose of work tracking and team
+      reporting (for example, how many products each user processed per hour). Access to this
+      Sheet is limited to the developer/administrator.</li>
+  <li>The approved-users list and the one-device-per-user lock are checked against the same
+      private Google Apps Script.</li>
 </ul>
 
-<h2>Where data is stored</h2>
-<p>All data stays on the user's own device, inside the browser's local extension storage.
-The only exception is the optional one-device lock check, which contacts a server that the
-account owner deploys and controls.</p>
+<h2>How the data is used</h2>
+<p>Data is used only to (a) verify access, (b) run the automation, and (c) produce internal
+work-activity reports for the team. It is not sold, not shared with third parties, not used
+for advertising, and not used for any purpose unrelated to these functions. It is not used to
+determine creditworthiness or for lending.</p>
 
-<h2>Data retention and deletion</h2>
-<p>Data is stored locally and can be cleared at any time using the Reset and Clear buttons inside
-the extension, or by removing the extension from Chrome. Removing the extension deletes all of
-its locally stored data.</p>
+<h2>Data retention</h2>
+<ul>
+  <li>Local daily counts are kept for the current day only; rejection counts are kept for the
+      current work week. Older local counts are cleared automatically.</li>
+  <li>Activity records in the developer's Google Sheet are retained by the developer for
+      internal reporting and can be deleted on request.</li>
+  <li>Removing the extension deletes all of its locally stored data.</li>
+</ul>
+
+<h2>Notice to users</h2>
+<p>Users are informed that, while using this extension for work, their account email and their
+submit/reject activity are recorded to a private Google Sheet owned by their administrator for
+work-tracking purposes.</p>
 
 <h2>Permissions</h2>
-<p>Each permission the extension requests is used only to deliver the features described on its
-Chrome Web Store listing: reading the account email for access control, reading and filling the
-Miinto arrival pages, opening and stepping through tabs, and storing settings and counts locally.
-No permission is used for tracking.</p>
+<p>Each permission is used only to deliver the features described on the Chrome Web Store
+listing: reading the account email for access control and reporting, reading and filling the
+Miinto arrival pages, opening and stepping through tabs, running scheduled maintenance
+(<code>alarms</code>), and storing settings and counts locally. No permission is used for
+tracking across other websites.</p>
 
 <h2>Children's privacy</h2>
-<p>Arrival Pro is a workplace tool intended for authorised adult users and is not directed to children.</p>
+<p>Arrival Pro is a workplace tool for authorised adult users and is not directed to children.</p>
 
 <h2>Changes to this policy</h2>
 <p>If this policy changes, the updated version will be published on this page with a new date.</p>
